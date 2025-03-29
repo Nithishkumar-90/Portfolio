@@ -10,10 +10,15 @@
 # General
 --------------------------------------------------------------*/
 body {
-                                                                      font-family: 'Helvetica Neue', sans-serif;
-  background: rgb(63,94,251);
-background: linear-gradient(90deg, rgba(63,94,251,0.722654027431285) 0%, rgba(252,70,107,0.4901610302324054) 100%);                                              
-  color: #000000;
+font-family: 'Helvetica Neue', sans-serif;
+    background: linear-gradient(120deg, rgba(34,193,195,0.8) 0%, rgba(253,187,45,0.8) 100%);
+    color: #000000;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 a {
