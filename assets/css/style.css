@@ -12,7 +12,7 @@
 body {
                                                                       font-family: 'Helvetica Neue', sans-serif;
                                                 
-  color: #f9da11;
+  color: #000000;
 }
 
 a {
@@ -58,7 +58,7 @@ h6 {
 }
 
 .back-to-top:hover {
-  background: #2D216B;
+  background: #fff;
   color: #fff;
 }
 
@@ -91,7 +91,7 @@ h6 {
 
 #header .logo h1 a,
 #header .logo h1 a:hover {
-  color: #fff;
+  color: #2D216B;
   text-decoration: none;
 }
 
