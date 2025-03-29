@@ -75,7 +75,7 @@ h6 {
   z-index: 997;
   transition: all 0.5s;
   height: 60px;
-  background: #f9da11;
+  background: linear-gradient(to right, red, blue, green);
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.12);
 }
 
@@ -134,7 +134,7 @@ h6 {
   justify-content: space-between;
   padding: 10px 0 10px 30px;
   font-size: 14px;
-  color: #03ffba;
+  color: #2D216B;
   white-space: nowrap;
   transition: 0.3s;
 }
