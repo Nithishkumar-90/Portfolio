@@ -9,18 +9,15 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+
 body {
 font-family: 'Helvetica Neue', sans-serif;
     background: linear-gradient(120deg, rgba(34,193,195,0.8) 0%, rgba(253,187,45,0.8) 100%);
     color: #000000;
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
-
+.body:hover {
+    color: black;
+    transition: color 0.3s ease;
 a {
   color: #2D216B;
   text-decoration: none;
