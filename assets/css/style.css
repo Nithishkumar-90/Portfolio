@@ -21,7 +21,7 @@ a {
 }
 
 a:hover {
-  color: #2D216B;
+  color: #03ffba;
   text-decoration: none;
 }
 
@@ -91,7 +91,7 @@ h6 {
 
 #header .logo h1 a,
 #header .logo h1 a:hover {
-  color: #2c4964;
+  color: #03ffba;
   text-decoration: none;
 }
 
@@ -134,7 +134,7 @@ h6 {
   justify-content: space-between;
   padding: 10px 0 10px 30px;
   font-size: 14px;
-  color: #2c4964;
+  color: #03ffba;
   white-space: nowrap;
   transition: 0.3s;
 }
