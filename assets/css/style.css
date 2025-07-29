@@ -52,12 +52,12 @@ h6 {
 
 .back-to-top i {
   font-size: 24px;
-  color: #fff;
+  color: #290873;
   line-height: 0;
 }
 
 .back-to-top:hover {
-  background: #fff;
+  background: #25A7DB;
   color: #fff;
 }
 
@@ -816,7 +816,7 @@ section {
 }
 
 .portfolio .portfolio-wrap .portfolio-info p {
-  color: #ffffff;
+  color: #B18FF7;
   font-size: 14px;
   text-transform: uppercase;
 }
