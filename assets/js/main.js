@@ -1,268 +1,391 @@
-/**
-* Template Name: Lonely
-* Updated: Sep 18 2023 with Bootstrap v5.3.2
-* Template URL: https://bootstrapmade.com/free-html-bootstrap-template-lonely/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-(function() {
-  "use strict";
+// Enhanced Main JavaScript File
+document.addEventListener('DOMContentLoaded', function() {
+  
+  // Preloader
+  window.addEventListener('load', function() {
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+      preloader.style.display = 'none';
+    }
+  });
 
-  /**
-   * Easy selector helper function
-   */
-  const select = (el, all = false) => {
-    el = el.trim()
-    if (all) {
-      return [...document.querySelectorAll(el)]
+  // Initialize AOS
+  AOS.init({
+    duration: 1000,
+    easing: 'ease-in-out',
+    once: true,
+    mirror: false
+  });
+
+  // Header scroll effect
+  function headerScroll() {
+    const header = document.getElementById('header');
+    if (window.scrollY > 100) {
+      header.classList.add('scrolled');
     } else {
-      return document.querySelector(el)
+      header.classList.remove('scrolled');
     }
   }
+  window.addEventListener('scroll', headerScroll);
 
-  /**
-   * Easy event listener function
-   */
-  const on = (type, el, listener, all = false) => {
-    let selectEl = select(el, all)
-    if (selectEl) {
-      if (all) {
-        selectEl.forEach(e => e.addEventListener(type, listener))
-      } else {
-        selectEl.addEventListener(type, listener)
-      }
-    }
+  // Mobile navigation toggle
+  const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+  const navbar = document.querySelector('#navbar');
+  
+  if (mobileNavToggle) {
+    mobileNavToggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      const navbarUl = document.querySelector('#navbar ul');
+      navbarUl.classList.toggle('show');
+      this.classList.toggle('bi-list');
+      this.classList.toggle('bi-x');
+    });
   }
 
-  /**
-   * Easy on scroll event listener 
-   */
-  const onscroll = (el, listener) => {
-    el.addEventListener('scroll', listener)
+  // ======= FIXED DARK MODE TOGGLE =======
+  const themeSwitch = document.getElementById('theme-switch');
+  const body = document.body;
+
+  // Initialize theme
+  function initTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    // Set initial theme
+    if (savedTheme) {
+      body.setAttribute('data-theme', savedTheme);
+      themeSwitch.checked = savedTheme === 'dark';
+    } else if (systemPrefersDark) {
+      body.setAttribute('data-theme', 'dark');
+      themeSwitch.checked = true;
+    } else {
+      body.setAttribute('data-theme', 'light');
+      themeSwitch.checked = false;
+    }
+    
+    console.log('Theme initialized:', body.getAttribute('data-theme'));
   }
 
-  /**
-   * Navbar links active state on scroll
-   */
-  let navbarlinks = select('#navbar .scrollto', true)
-  const navbarlinksActive = () => {
-    let position = window.scrollY + 200
-    navbarlinks.forEach(navbarlink => {
-      if (!navbarlink.hash) return
-      let section = select(navbarlink.hash)
-      if (!section) return
-      if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
-        navbarlink.classList.add('active')
-      } else {
-        navbarlink.classList.remove('active')
-      }
-    })
-  }
-  window.addEventListener('load', navbarlinksActive)
-  onscroll(document, navbarlinksActive)
-
-  /**
-   * Scrolls to an element with header offset
-   */
-  const scrollto = (el) => {
-    let header = select('#header')
-    let offset = header.offsetHeight
-
-    if (!header.classList.contains('header-scrolled')) {
-      offset -= 16
-    }
-
-    let elementPos = select(el).offsetTop
-    window.scrollTo({
-      top: elementPos - offset,
-      behavior: 'smooth'
-    })
+  // Toggle theme function
+  function toggleTheme() {
+    const currentTheme = body.getAttribute('data-theme');
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    
+    body.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    themeSwitch.checked = newTheme === 'dark';
+    
+    console.log('Theme changed to:', newTheme);
+    
+    // Add transition for smooth theme change
+    body.style.transition = 'background-color 0.3s ease, color 0.3s ease';
+    setTimeout(() => {
+      body.style.transition = '';
+    }, 300);
   }
 
-  /**
-   * Header fixed top on scroll
-   */
-  let selectHeader = select('#header')
-  if (selectHeader) {
-    let headerOffset = selectHeader.offsetTop
-    let nextElement = selectHeader.nextElementSibling
-    const headerFixed = () => {
-      if ((headerOffset - window.scrollY) <= 0) {
-        selectHeader.classList.add('fixed-top')
-        nextElement.classList.add('scrolled-offset')
-      } else {
-        selectHeader.classList.remove('fixed-top')
-        nextElement.classList.remove('scrolled-offset')
-      }
-    }
-    window.addEventListener('load', headerFixed)
-    onscroll(document, headerFixed)
+  // Initialize theme on load
+  initTheme();
+
+  // Add event listener to toggle
+  if (themeSwitch) {
+    themeSwitch.addEventListener('change', toggleTheme);
+    console.log('Theme switch event listener added');
+  } else {
+    console.error('Theme switch element not found!');
   }
 
-  /**
-   * Back to top button
-   */
-  let backtotop = select('.back-to-top')
-  if (backtotop) {
-    const toggleBacktotop = () => {
-      if (window.scrollY > 100) {
-        backtotop.classList.add('active')
-      } else {
-        backtotop.classList.remove('active')
-      }
-    }
-    window.addEventListener('load', toggleBacktotop)
-    onscroll(document, toggleBacktotop)
+  // Also allow clicking on the label (for better UX)
+  const themeLabel = document.querySelector('.theme-label');
+  if (themeLabel) {
+    themeLabel.addEventListener('click', function(e) {
+      e.preventDefault();
+      themeSwitch.checked = !themeSwitch.checked;
+      themeSwitch.dispatchEvent(new Event('change'));
+    });
   }
 
-  /**
-   * Mobile nav toggle
-   */
-  on('click', '.mobile-nav-toggle', function(e) {
-    select('#navbar').classList.toggle('navbar-mobile')
-    this.classList.toggle('bi-list')
-    this.classList.toggle('bi-x')
-  })
-
-  /**
-   * Mobile nav dropdowns activate
-   */
-  on('click', '.navbar .dropdown > a', function(e) {
-    if (select('#navbar').classList.contains('navbar-mobile')) {
-      e.preventDefault()
-      this.nextElementSibling.classList.toggle('dropdown-active')
-    }
-  }, true)
-
-  /**
-   * Scrool with ofset on links with a class name .scrollto
-   */
-  on('click', '.scrollto', function(e) {
-    if (select(this.hash)) {
-      e.preventDefault()
-
-      let navbar = select('#navbar')
-      if (navbar.classList.contains('navbar-mobile')) {
-        navbar.classList.remove('navbar-mobile')
-        let navbarToggle = select('.mobile-nav-toggle')
-        navbarToggle.classList.toggle('bi-list')
-        navbarToggle.classList.toggle('bi-x')
-      }
-      scrollto(this.hash)
-    }
-  }, true)
-
-  /**
-   * Scroll with ofset on page load with hash links in the url
-   */
-  window.addEventListener('load', () => {
-    if (window.location.hash) {
-      if (select(window.location.hash)) {
-        scrollto(window.location.hash)
-      }
+  // Listen for system theme changes
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+    if (!localStorage.getItem('theme')) {
+      const newTheme = e.matches ? 'dark' : 'light';
+      body.setAttribute('data-theme', newTheme);
+      themeSwitch.checked = newTheme === 'dark';
     }
   });
 
-  /**
-   * Porfolio isotope and filter
-   */
-  window.addEventListener('load', () => {
-    let portfolioContainer = select('.portfolio-container');
-    if (portfolioContainer) {
-      let portfolioIsotope = new Isotope(portfolioContainer, {
-        itemSelector: '.portfolio-item',
-        layoutMode: 'fitRows'
+  // Smooth scrolling for navigation links
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      const targetId = this.getAttribute('href');
+      const targetSection = document.querySelector(targetId);
+      
+      if (targetSection) {
+        const headerHeight = document.getElementById('header').offsetHeight;
+        const targetPosition = targetSection.offsetTop - headerHeight;
+        
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+        
+        // Close mobile menu if open
+        const navbarUl = document.querySelector('#navbar ul');
+        if (navbarUl.classList.contains('show')) {
+          navbarUl.classList.remove('show');
+          mobileNavToggle.classList.toggle('bi-list');
+          mobileNavToggle.classList.toggle('bi-x');
+        }
+      }
+    });
+  });
+
+  // Typed.js initialization
+  const typed = new Typed('.typed-text', {
+    strings: [
+      'Technical Support Specialist',
+      '5G Communication Developer',
+      'Cisco Network Engineer',
+      'System Management Professional'
+    ],
+    typeSpeed: 50,
+    backSpeed: 30,
+    backDelay: 2000,
+    loop: true,
+    showCursor: true,
+    cursorChar: '|'
+  });
+
+  // Back to top button
+  function toggleBackToTop() {
+    const backToTop = document.querySelector('.back-to-top');
+    if (window.scrollY > 300) {
+      backToTop.classList.add('active');
+    } else {
+      backToTop.classList.remove('active');
+    }
+  }
+  window.addEventListener('scroll', toggleBackToTop);
+
+  // Enhanced Hero Section Animations
+  function initHeroAnimations() {
+    // Parallax effect for floating elements
+    window.addEventListener('scroll', function() {
+      const floatingElements = document.querySelectorAll('.floating-element');
+      const scrolled = window.pageYOffset;
+      
+      floatingElements.forEach(element => {
+        const speed = element.getAttribute('data-speed') || 1;
+        const yPos = -(scrolled * speed / 10);
+        element.style.transform = `translateY(${yPos}px)`;
       });
+    });
 
-      let portfolioFilters = select('#portfolio-flters li', true);
+    // Interactive mouse move effect
+    document.addEventListener('mousemove', function(e) {
+      const hero = document.querySelector('.hero');
+      const mouseX = e.clientX / window.innerWidth;
+      const mouseY = e.clientY / window.innerHeight;
+      
+      const floatingElements = document.querySelectorAll('.floating-element');
+      floatingElements.forEach((element, index) => {
+        const moveX = (mouseX - 0.5) * 20;
+        const moveY = (mouseY - 0.5) * 20;
+        const delay = index * 100;
+        
+        setTimeout(() => {
+          element.style.transform = `translate(${moveX}px, ${moveY}px)`;
+        }, delay);
+      });
+    });
 
-      on('click', '#portfolio-flters li', function(e) {
-        e.preventDefault();
-        portfolioFilters.forEach(function(el) {
-          el.classList.remove('filter-active');
-        });
-        this.classList.add('filter-active');
-
-        portfolioIsotope.arrange({
-          filter: this.getAttribute('data-filter')
-        });
-      }, true);
-    }
-
-  });
-
-  /**
-   * Initiate portfolio lightbox 
-   */
-  const portfolioLightbox = GLightbox({
-    selector: '.portfolio-lightbox'
-  });
-
-  /**
-   * Portfolio details slider
-   */
-  new Swiper('.portfolio-details-slider', {
-    speed: 400,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    }
-  });
-
-  /**
-   * Skills animation
-   */
-  let skilsContent = select('.skills-content');
-  if (skilsContent) {
-    new Waypoint({
-      element: skilsContent,
-      offset: '80%',
-      handler: function(direction) {
-        let progress = select('.progress .progress-bar', true);
-        progress.forEach((el) => {
-          el.style.width = el.getAttribute('aria-valuenow') + '%'
-        });
-      }
-    })
+    // Animate tech badges on hover
+    const techBadges = document.querySelectorAll('.tech-badge');
+    techBadges.forEach(badge => {
+      badge.addEventListener('mouseenter', function() {
+        this.style.transform = 'scale(1.1) rotate(5deg)';
+        this.style.background = 'rgba(255, 255, 255, 1)';
+      });
+      
+      badge.addEventListener('mouseleave', function() {
+        this.style.transform = '';
+        this.style.background = 'rgba(255, 255, 255, 0.9)';
+      });
+    });
   }
 
-  /**
-   * Testimonials slider
-   */
-  new Swiper('.testimonials-slider', {
-    speed: 600,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    slidesPerView: 'auto',
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    },
-    breakpoints: {
-      320: {
-        slidesPerView: 1,
-        spaceBetween: 40
-      },
+  initHeroAnimations();
 
-      1200: {
-        slidesPerView: 3,
-      }
-    }
+  // Enhanced Skills animation on scroll
+  function animateSkills() {
+    const skills = document.querySelectorAll('.progress-bar');
+    skills.forEach((skill, index) => {
+      const width = skill.style.width;
+      skill.style.width = '0';
+      setTimeout(() => {
+        skill.style.width = width;
+      }, index * 200);
+    });
+  }
+
+  // Intersection Observer for skills animation
+  const skillsSection = document.querySelector('.skills');
+  if (skillsSection) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateSkills();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    observer.observe(skillsSection);
+  }
+
+  // Add hover effect to all interactive elements
+  document.querySelectorAll('.btn, .portfolio-item, .tool-item, .stat-card, .feature-item').forEach(element => {
+    element.style.transition = 'all 0.3s ease';
   });
 
-  /**
-   * Initiate Pure Counter 
-   */
-  new PureCounter();
+  // Console welcome message
+  console.log('%c👋 Welcome to Nithishkumar\'s Portfolio!', 'font-size: 20px; color: #6366f1; font-weight: bold;');
+  console.log('%cDark mode toggle is now working!', 'font-size: 16px; color: #10b981;');
+  console.log('%cLet\'s build something amazing together!', 'font-size: 16px; color: #10b981;');
 
-})()
+  // Add scroll-triggered animations for stats
+  function animateStats() {
+    const statNumbers = document.querySelectorAll('.stat-content h3');
+    statNumbers.forEach(stat => {
+      const finalValue = parseInt(stat.textContent);
+      let currentValue = 0;
+      const duration = 2000;
+      const increment = finalValue / (duration / 16);
+      
+      const timer = setInterval(() => {
+        currentValue += increment;
+        if (currentValue >= finalValue) {
+          stat.textContent = finalValue + '+';
+          clearInterval(timer);
+        } else {
+          stat.textContent = Math.floor(currentValue) + '+';
+        }
+      }, 16);
+    });
+  }
+
+  // Intersection Observer for stats animation
+  const statsSection = document.querySelector('.about-stats');
+  if (statsSection) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateStats();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    observer.observe(statsSection);
+  }
+
+  // Contact Form Functionality
+  function initContactForm() {
+    const contactForm = document.querySelector('.contact-form form');
+    
+    if (contactForm) {
+      contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const submitButton = this.querySelector('button[type="submit"]');
+        const originalText = submitButton.textContent;
+        
+        // Add loading state
+        submitButton.textContent = 'Sending...';
+        submitButton.disabled = true;
+        
+        // Simulate form submission (replace with actual form submission)
+        try {
+          // Here you would typically send the form data to your server
+          // For now, we'll simulate a successful submission
+          await new Promise(resolve => setTimeout(resolve, 2000));
+          
+          // Show success message
+          showFormSuccess();
+          
+          // Reset form
+          this.reset();
+          
+        } catch (error) {
+          alert('Sorry, there was an error sending your message. Please try again.');
+        } finally {
+          // Remove loading state
+          submitButton.textContent = originalText;
+          submitButton.disabled = false;
+        }
+      });
+    }
+  }
+
+  function showFormSuccess() {
+    // Create success message if it doesn't exist
+    let successMessage = document.querySelector('.form-success');
+    
+    if (!successMessage) {
+      successMessage = document.createElement('div');
+      successMessage.className = 'form-success';
+      successMessage.innerHTML = `
+        <i class="bi bi-check-circle-fill" style="font-size: 3rem; margin-bottom: 1rem;"></i>
+        <h3>Message Sent Successfully!</h3>
+        <p>Thank you for your message. I'll get back to you as soon as possible.</p>
+      `;
+      
+      const contactForm = document.querySelector('.contact-form');
+      contactForm.appendChild(successMessage);
+    }
+    
+    // Show success message
+    successMessage.style.display = 'block';
+    
+    // Hide success message after 5 seconds
+    setTimeout(() => {
+      successMessage.style.display = 'none';
+    }, 5000);
+  }
+
+  // Initialize contact form
+  initContactForm();
+});
+
+// Utility functions
+function debounce(func, wait, immediate) {
+  let timeout;
+  return function executedFunction(...args) {
+    const later = () => {
+      timeout = null;
+      if (!immediate) func(...args);
+    };
+    const callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func(...args);
+  };
+}
+
+function throttle(func, limit) {
+  let inThrottle;
+  return function(...args) {
+    if (!inThrottle) {
+      func.apply(this, args);
+      inThrottle = true;
+      setTimeout(() => inThrottle = false, limit);
+    }
+  }
+}
+
+window.portfolioApp = {
+  debounce,
+  throttle
+};
