@@ -1,416 +1,747 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>NITHISHKUMAR Portfolio</title>
-	<link rel="icon" type="image/x-icon" href="assets/img/curriculum-vitae.ico">
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-  <style>
-  /* Style for the button */
-  .buttom button {
-    background-color: #2D216B; /* Green background color */
-    color: white; /* White text color */
-    padding: 10px 20px; /* Padding around the text */
-    font-size: 16px; /* Font size of the text */
-    border: none; /* No border */
-    cursor: pointer; /* Cursor style on hover */
-    border-radius: 5px; /* Optional: Rounded corners */
-  }
+  <title>Nithishkumar | Portfolio</title>
+  <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+  <meta content="Nithishkumar - Networking & System Management Professional | 5G Communication Development" name="description">
+  <meta content="5G, Networking, System Management, CCNA, MATLAB, Java" name="keywords">
   
-  /* Hover effect */
-  .buttom button:hover {
-    background-color: #2D216B; /* Darker green color on hover */
-  }
-</style>
-
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,500,500i,600,600i,700,700i&subset=cyrillic" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <!-- Main CSS -->
   <link href="assets/css/style.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: Lonely
-  * Updated: Sep 18 2023 with Bootstrap v5.3.2
-  * Template URL: https://bootstrapmade.com/free-html-bootstrap-template-lonely/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
 
-<body  >
-
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column align-items-center justify-content-center">
-    <h1 >Hi, I'm Nithishkumar!</h1>
-    <h2 >Networking & System Management Professional | 5G Communication Development | Technical Support Enthusiast</h2>
-    <a href="#about" class="btn-get-started scrollto"><i class="bi bi-chevron-double-down"></i></a>
-  </section><!-- End Hero -->
+<body data-theme="light">
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="spinner"></div>
+  </div>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="d-flex align-items-center">
+  <header id="header" class="header">
     <div class="container d-flex align-items-center justify-content-between">
-
       <div class="logo">
-        <h1><a href="index.html">NITHISHKUMAR PERUMAL</a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        <h1><a href="index.html">NITHISH<span>KUMAR</span></a></h1>
       </div>
 
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#resume">Resume</a></li>
+          <li><a class="nav-link scrollto" href="#skills">Skills</a></li>
+          <li><a class="nav-link scrollto" href="#experience">Experience</a></li>
           <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li>
-          
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
         </ul>
+        
+        <!-- Dark/Light Mode Toggle -->
+        <div class="theme-toggle-container">
+          <input type="checkbox" id="theme-switch" class="theme-switch">
+          <label for="theme-switch" class="theme-label">
+            <span class="sun-icon">☀️</span>
+            <span class="moon-icon">🌙</span>
+            <div class="toggle-handle"></div>
+          </label>
+        </div>
+
         <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
+      </nav>
     </div>
-  </header><!-- End Header -->
+  </header>
 
-  <main id="main">
-
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
-      <div class="container">
-
-        <div class="row no-gutters">
-          <div class="image col-xl-5 d-flex align-items-stretch justify-content-center justify-content-lg-start"></div>
-          <div class="col-xl-7 ps-0 ps-lg-5 pe-lg-1 d-flex align-items-stretch">
-            <div class="content d-flex flex-column justify-content-center">
-              <h3>Pleasures provided as if they are the most worthy.</h3>
-              <p>
-                My name is Nithishkumar, and I have completed my degree in Computer Science and Engineering. I have a strong passion for 5G communication development, 
-		      Cisco CCNAv7 network engineering,system assembling and web development.</p>
-                <p>
-                 During my studies, I honed my skills in Java, Basic AWS cloud web hosting, and MySQL. Additionally, 
-			I have completed MATLAB Onramp, MATLAB Signal Processing Onramp, and MATLAB Wireless Communication Onramp, 
-			further strengthening my expertise in signal processing and wireless communication.</p>
-<p>
-  I have also completed a training course in 5G communication development from DADB, expanding my knowledge of next-generation networking technologies.
-	I am a highly motivated individual who thrives on tackling complex challenges and working on innovative projects. My ability to 
-	learn quickly and adapt to new technologies makes me a valuable asset to any team looking for a passionate Computer Science and Engineering professional.
-	I am dedicated to pushing creative boundaries and delivering solutions that leave a lasting impact. 
-	Join me on this exciting journey as we explore the intersection of technology, innovation, and design.</p>
-          </div>
-        </div>
-
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="hero">
+    <!-- Animated Tech Background -->
+    <div class="tech-background">
+      <div class="circuit-lines">
+        <div class="circuit-line line-1"></div>
+        <div class="circuit-line line-2"></div>
+        <div class="circuit-line line-3"></div>
+        <div class="circuit-line line-4"></div>
       </div>
-    </section><!-- End About Section -->
-
-    <!-- ======= Skills Section ======= -->
-	  <section id="skills" class="skills section-bg">
-      <div class="container">
-
-        <div class="section-title">
-  <h2>Experience</h2>
-		 <h3>Internship: 5G Communication Technology – DADB</h3>
-  <p>I specialize in network engineering, 5G communication technology, system assembling, and system management, leveraging my technical expertise to build and optimize high-performance systems. 
-    With a strong foundation in Cisco network engineering and 5G technologies, I focus on creating efficient networking solutions that meet modern industry demands.</p>
-
-  <p>During my internship at <strong>DADB</strong> as an <strong>Intern – 5G Communication Technology</strong>, I gained hands-on experience in implementing and configuring User Equipment (UE) and gNodeB (gNB) components using tools like <strong>free5GC</strong> and <strong>UERANSIM</strong>. 
-    I learned to simulate end-to-end 5G networks, troubleshoot network issues, and analyze QoS configurations for optimizing multimedia streaming performance. This experience strengthened my understanding of 5G architecture, core network deployment, and real-time communication protocols.</p>
-
-  <p>My knowledge extends to system management and hardware technologies, allowing me to efficiently assemble, troubleshoot, and maintain computing systems for both personal and enterprise applications. 
-    I am passionate about optimizing system performance, ensuring seamless connectivity, and staying at the forefront of emerging networking trends.</p>
-
-  <p>By integrating next-generation communication technologies with practical engineering principles, I strive to push innovation forward and deliver highly reliable, future-ready solutions.</p>
+      <div class="floating-elements">
+        <div class="floating-element element-1" data-speed="2">
+          <i class="bi bi-wifi"></i>
         </div>
-    <section id="skills" class="skills section-bg">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Skills</h2>
-          <p>I specialize in network engineering, 5G communication technology, system assembling, and system management, leveraging my technical expertise to build and optimize high-performance systems. 
-		  With a strong foundation in Cisco network engineering and 5G technologies, I focus on creating efficient networking solutions that meet modern industry demands.
-</p>
-		<p>My knowledge extends to system management and hardware technologies, allowing me to efficiently assemble, troubleshoot, and maintain computing systems for both personal and enterprise applications. 
-			I am passionate about optimizing system performance, ensuring seamless connectivity, and staying at the forefront of emerging networking trends.</p>
-          <p>By integrating next-generation communication technologies with practical engineering principles, I strive to push innovation forward and deliver highly reliable, future-ready solutions.</p>
+        <div class="floating-element element-2" data-speed="1.5">
+          <i class="bi bi-cpu"></i>
         </div>
-
-        <div class="row skills-content">
-
-          <div class="col-lg-6">
-	    <div class="progress">
-              <span class="skill">Network Engineering<i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"Style="background-color: #2D216B;"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill">5G Communication Technology <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"Style="background-color: #2D216B;"></div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">System Assembling & Management<i class="val">100%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" Style="background-color: #2D216B;"></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6">
-		  <div class="progress">
-              <span class="skill">Html & CSS<i class="val">70%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" Style="background-color: #2D216B;"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill">core Java<i class="val">60%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"Style="background-color: #2D216B;"></div>
-              </div>
-            </div>
-			
-            <div class="progress">
-              <span class="skill">MySQl<i class="val">70%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" Style="background-color: #2D216B;"></div>
-              </div>
-            </div>
-</div>
-
+        <div class="floating-element element-3" data-speed="2.5">
+          <i class="bi bi-diagram-3"></i>
+        </div>
+        <div class="floating-element element-4" data-speed="1.8">
+          <i class="bi bi-code-slash"></i>
+        </div>
+        <div class="floating-element element-5" data-speed="2.2">
+          <i class="bi bi-cloud"></i>
+        </div>
+        <div class="floating-element element-6" data-speed="1.6">
+          <i class="bi bi-broadcast"></i>
+        </div>
       </div>
-    </section>
-    <section id="resume" class="resume section-bg">
-      <div class="container">
+      <div class="binary-rain"></div>
+      <div class="network-nodes">
+        <div class="node node-1"></div>
+        <div class="node node-2"></div>
+        <div class="node node-3"></div>
+        <div class="node node-4"></div>
+        <div class="node node-5"></div>
+        <div class="node node-6"></div>
+      </div>
+    </div>
 
-        <div class="section-title">
-          <h2>Resume</h2>
-          <p>As a recent Bachelor of Engineering graduate with a passion for Computer Science and Engineering , 
-            I bring a fresh perspective, strong academic foundation, and a commitment to learning. 
-            Proficient in  creativity, problem-solving and teamwork. </p>
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="hero-text" data-aos="fade-up" data-aos-delay="200">
+          <span class="greeting">Hello, I'm</span>
+          <h1>
+            <span class="name-line-1">Nithishkumar</span>
+            <span class="name-line-2">Perumal</span>
+          </h1>
+          <div class="typed-text-container">
+            <span class="typed-text">Technical Support </span>
+          </div>
+          <p>Specializing in 5G Communication Development, Cisco Network Engineering, and Advanced System Solutions</p>
+          <div class="hero-buttons">
+            <a href="#about" class="btn btn-primary scrollto">
+              <span>Explore My Work</span>
+              <i class="bi bi-arrow-right"></i>
+            </a>
+            <a href="#contact" class="btn btn-secondary scrollto">
+              <span>Reach me </span>
+              <i class="bi bi-chat"></i>
+            </a>
+          </div>
         </div>
 
-        <div class="row">
-          <div class="col-lg-6">
-            <h3 class="resume-title">Sumary</h3>
-            <div class="resume-item pb-0">
-              <h4>Nithishkumar perumal</h4>
-              <p><em>I take an innovative approach to network engineering and system management, focusing on optimizing performance and reliability.
-		      With expertise in 5G communication technology and system assembling, 
-		      I strive to develop efficient and scalable solutions that meet modern connectivity demands.</em></p>
-              <p>
-              <ul>
-                <li>Karimangalam, Dharmapuri, Tamilnadu</li>
-                <li>+91 9025724946</li>
-                <li>nithishperumal533@gmail.com</li>
-              </ul>
-              </p>
+        <!-- Modern Image Section -->
+        <div class="hero-image" data-aos="fade-left" data-aos-delay="400">
+          <div class="modern-image-container">
+            <div class="image-wrapper">
+              
+              </div>
+              <div class="image-decoration">
+                <div class="decoration-circle circle-1"></div>
+                <div class="decoration-circle circle-2"></div>
+                <div class="decoration-circle circle-3"></div>
+              </div>
+              <div class="tech-badge badge-0">
+                
+                <span><img src="assets/img/mee3.png"></span>
+              </div>
+              <div class="tech-badge badge-1">
+                <i class="bi bi-wifi"></i>
+                <span>5G communication learner</span>
+              </div>
+              <div class="tech-badge badge-2">
+                <i class="bi bi-shield-check"></i>
+                <span>CCNA Certified</span>
+              </div>
+              <div class="tech-badge badge-3">
+                <i class="bi bi-gear"></i>
+                <span>System Specialist</span>
+              </div>
             </div>
-
           </div>
-          <div class="col-lg-6">
+        </div>
+      </div>
+
+      <div class="scroll-indicator">
+        <a href="#about" class="scrollto">
+          <div class="mouse">
+            <div class="wheel"></div>
+          </div>
+          <div class="arrow"></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= About Section ======= -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <span>About Me</span>
+        <h2>Professional Profile</h2>
+        <p>Get to know my background, expertise, and professional journey</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-main" data-aos="fade-right" data-aos-delay="100">
+          <div class="about-header">
+            <h3>Innovating in <span class="gradient-text">Network Engineering</span> & <span class="gradient-text">5G Technology</span></h3>
+          </div>
+          <div class="about-content">
+            <p class="lead">Driven Computer Science and Engineering graduate with a solid foundation in networking, 5G communication concepts, and system management. I have hands-on experience with Cisco networking basics, system assembly, troubleshooting, and working with modern communication tools.</p>
+            <p>I enjoy learning new technologies, solving technical problems, and contributing to projects that help improve network performance and reliability. I’m continuously growing my skills in networking and 5G systems while aiming to build a strong career in the telecom and technical support domain.</p>
             
-            <h3 class="resume-title">Education</h3>
-            <div class="resume-item">
-              <h4>Bachelor of Engineering</h4>
-              <h5>2020 - 2024</h5>
-              <p><em>Varuvan Vadivelan Institute of Technology,Dharmapuri</em></p>
-              <p>Computer Science and Engineering</p>
+            <div class="about-features">
+              <div class="feature-item" data-aos="zoom-in" data-aos-delay="100">
+                <div class="feature-icon">
+                  <i class="bi bi-wifi"></i>
+                </div>
+                <div class="feature-content">
+                  <h4>5G Communication Development</h4>
+                  <p>Intermediate knowledge in 5G protocols and implementation</p>
+                </div>
+              </div>
               
-             
-</div>        
+              <div class="feature-item" data-aos="zoom-in" data-aos-delay="200">
+                <div class="feature-icon">
+                  <i class="bi bi-diagram-3"></i>
+                </div>
+                <div class="feature-content">
+                  <h4>Cisco CCNAv7 Certified Network Engineer</h4>
+                  <p>Networking solutions and infrastructure</p>
+                </div>
+              </div>
+              
+              <div class="feature-item" data-aos="zoom-in" data-aos-delay="300">
+                <div class="feature-icon">
+                  <i class="bi bi-cpu"></i>
+                </div>
+                <div class="feature-content">
+                  <h4>System Assembly & Management Specialist</h4>
+                  <p>End-to-end system configuration and optimization</p>
+                </div>
+              </div>
+              
+              <div class="feature-item" data-aos="zoom-in" data-aos-delay="400">
+                <div class="feature-icon">
+                  <i class="bi bi-graph-up"></i>
+                </div>
+                <div class="feature-content">
+                  <h4>MATLAB Signal Processing & Wireless Communication</h4>
+                  <p>Advanced signal analysis and wireless systems</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-stats" data-aos="fade-left" data-aos-delay="200">
+          <div class="stats-grid">
+            <div class="stat-card" data-aos="flip-up" data-aos-delay="100">
+              <div class="stat-icon">
+                <i class="bi bi-award"></i>
+              </div>
+              <div class="stat-content">
+                <h3>5+</h3>
+                <p>Technical Certifications</p>
+                <span>CCNA, MATLAB, Java & more</span>
+              </div>
+            </div>
+            
+            <div class="stat-card" data-aos="flip-up" data-aos-delay="200">
+              <div class="stat-icon">
+                <i class="bi bi-briefcase"></i>
+              </div>
+              <div class="stat-content">
+                <h3>6</h3>
+                <p>Months Experience</p>
+                <span>5G Tech </span>
+              </div>
+            </div>
+            <div class="stat-card" data-aos="flip-up" data-aos-delay="200">
+              <div class="stat-icon">
+                <i class="bi bi-briefcase"></i>
+              </div>
+              <div class="stat-content">
+                <h3>1+</h3>
+                <p>Years Experience</p>
+                <span>Technical Support</span>
+              </div>
+            </div>
+            
+            <div class="stat-card" data-aos="flip-up" data-aos-delay="300">
+              <div class="stat-icon">
+                <i class="bi bi-laptop"></i>
+              </div>
+              <div class="stat-content">
+                <h3>10+</h3>
+                <p>Projects Completed</p>
+                <span>Networking & Systems</span>
+              </div>
+            </div>
+            
+            <div class="stat-card" data-aos="flip-up" data-aos-delay="400">
+              <div class="stat-icon">
+                <i class="bi bi-gear"></i>
+              </div>
+              <div class="stat-content">
+                <h3>8+</h3>
+                <p>Technologies</p>
+                <span>Modern Tools & Platforms</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="about-cta" data-aos="fade-up" data-aos-delay="500">
+            <p>Ready to bring innovative solutions to your projects</p>
+            <a href="#contact" class="btn btn-primary">Start a Conversation</a>
+          </div>
+        </div>
       </div>
-  </div>
-    </section><!-- End Resume Section -->
+    </div>
+  </section>
 
+  <!-- ======= Skills Section ======= -->
+  <section id="skills" class="skills section-bg">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <span>My Expertise</span>
+        <h2>Technical Skills</h2>
+        <p>Comprehensive skill set in networking, communication technologies, and system management</p>
+      </div>
 
-    <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio section-bg">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Portfolio</h2>
-          <p>A passionate and enthusiastic professional with a degree in Computer Science and Engineering, I specialize in network engineering, 
-		  5G communication technology, system assembling, and system management. 
-		  Continuously expanding my expertise through online learning, I am committed to applying my skills to real-world 
-		  challenges and driving innovation in networking and advanced communication systems.</p>
+      <div class="row skills-content">
+        <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+          <div class="skill-category">
+            <h4>Networking & Communication</h4>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>Network Engineering</span>
+                <span>85%</span>
+              </div>
+              <div class="progress">
+                <div class="progress-bar" style="width: 85%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>5G Communication Technology</span>
+                <span>80%</span>
+              </div>
+              <div class="progress">
+                <div class="progress-bar" style="width: 80%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>Cisco Technologies</span>
+                <span>75%</span>
+              </div>
+              <div class="progress">
+                <div class="progress-bar" style="width: 75%"></div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="row">
-          <div class="col-lg-12 d-flex justify-content-center">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">Resume and Certificates</li>
-              <li data-filter="*" class="filter-active"></li>
-              
-              
-            </ul>
+        <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
+          <div class="skill-category">
+            <h4>Development & Systems</h4>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>System Assembly & Management</span>
+                <span>90%</span>
+              </div>
+              <div class="progress">
+                <div class="progress-bar" style="width: 90%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>HTML & CSS</span>
+                <span>75%</span>
+              </div>
+              <div class="progress">
+                <div class="progress-bar" style="width: 75%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>Java & MySQL</span>
+                <span>70%</span>
+              </div>
+              <div class="progress">
+                <div class="progress-bar" style="width: 70%"></div>
+              </div>
+            </div>
           </div>
         </div>
-        <hr>
-        <a href="assets/img/nithishkumar_p.pdf" target="_blank">View MY RESUME </a>
-<BR><hr>
-	      <div class="row portfolio-container"> 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/ccnav7.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>CCNAv7:Network Engineering on Cisco</h4>
-                <p>certificate</p>
+      </div>
+
+      <div class="skills-extra" data-aos="fade-up" data-aos-delay="200">
+        <h4>Tools & Technologies</h4>
+        <div class="tools-grid">
+          <div class="tool-item">
+            <i class="bi bi-wifi"></i>
+            <span>free5GC</span>
+          </div>
+          <div class="tool-item">
+            <i class="bi bi-broadcast"></i>
+            <span>UERANSIM</span>
+          </div>
+          <div class="tool-item">
+            <i class="bi bi-diagram-3"></i>
+            <span>Cisco Packet Tracer</span>
+          </div>
+          <div class="tool-item">
+            <i class="bi bi-graph-up"></i>
+            <span>MATLAB</span>
+          </div>
+          <div class="tool-item">
+            <i class="devicon-linux-plain"></i>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" height="40" width="40" />
+            <span>Linux</span>
+          </div>
+          <div class="tool-item">
+            <i class="bi bi-code-square"></i>
+            <span>VS Code</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Experience Section ======= -->
+  <section id="experience" class="experience section-bg">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <span>My Journey</span>
+        <h2>Experience & Education</h2>
+      </div>
+
+      <div class="experience-container">
+        <div class="experience-column" data-aos="fade-right" data-aos-delay="100">
+          <!-- Fixed Experience Items -->
+          <div class="experience-item">
+            <div class="experience-header">
+              <div>
+                <h4>Technical and TallyPrime Support</h4>
+                <span class="company">OURRKEY LOGICAL AND ANALYTICAL PRIVATE LIMITED - Full-time</span>
               </div>
-              <div class="portfolio-links">
-                <a href="assets/img/ccnav7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Network Engineering on Cisco"><i class="bx bx-plus"></i></a>
-               
-              </div>
+              <span class="date">May 2025 - Present</span>
+            </div>
+            <div class="location">
+              <i class="bi bi-geo-alt"></i>
+              <span>Hosur, Tamil Nadu, India - On-site</span>
+            </div>
+            <p>Providing comprehensive technical support and Tally software assistance, troubleshooting issues, and ensuring smooth business operations through logical and analytical solutions.</p>
+            <div class="experience-tags">
+              <span class="tag">Technical Support</span>
+              <span class="tag">Tally Software</span>
+              <span class="tag">Troubleshooting</span>
+              <span class="tag">Business Operations</span>
             </div>
           </div>
-	      <div class="row portfolio-container"> 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/Signal.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Matlab Signal Processing Onramp</h4>
-                <p>certificate</p>
+
+          <div class="experience-item">
+            <div class="experience-header">
+              <div>
+                <h4>Intern - 5G Communication Technology</h4>
+                <span class="company">DADB</span>
               </div>
-              <div class="portfolio-links">
-                <a href="assets/img/Signal.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Matlab Signal Processing Onramp"><i class="bx bx-plus"></i></a>
-               
-              </div>
+              <span class="date">2023 - 2024</span>
+            </div>
+            <p>Gained hands-on experience in implementing and configuring User Equipment (UE) and gNodeB (gNB) components using free5GC and UERANSIM. Specialized in simulating end-to-end 5G networks and optimizing multimedia streaming performance.</p>
+            <div class="experience-tags">
+              <span class="tag">5G Technology</span>
+              <span class="tag">Network Simulation</span>
+              <span class="tag">free5GC</span>
+              <span class="tag">UERANSIM</span>
             </div>
           </div>
-		      <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/wireless.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Matlab wireless communication Onramp</h4>
-                <p>certificate</p>
-              </div>
-              <div class="portfolio-links">
-                <a href="assets/img/wireless.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Matlab Wireless communication Onramp"><i class="bx bx-plus"></i></a>
-               
-              </div>
+        </div>
+
+        <div class="education-column" data-aos="fade-left" data-aos-delay="100">
+          <div class="education-item">
+            <div class="education-header">
+              <h4>Bachelor of Engineering</h4>
+              <span class="date">2020 - 2024</span>
             </div>
-          </div>
-		      <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/Onramp.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Matlab Onramp</h4>
-                <p>certificate</p>
+            <h5>Computer Science & Engineering</h5>
+            <p class="institution">Varuvan Vadivelan Institute of Technology, Dharmapuri</p>
+            <div class="education-features">
+              <div class="feature">
+                <i class="bi bi-award"></i>
+                <span>Specialized in Networking & Communication</span>
               </div>
-              <div class="portfolio-links">
-                <a href="assets/img/Onramp.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Matlab Onramp"><i class="bx bx-plus"></i></a>
-               
-              </div>
-            </div>
-          </div>
-       
-        <div class="row portfolio-container"> 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/cert1.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>UDEMY JAVA CERTIFICATE </h4>
-                <p>certificate</p>
-              </div>
-              <div class="portfolio-links">
-                <a href="assets/img/cert1.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="UDEMY JAVA CERTIFICATE"><i class="bx bx-plus"></i></a>
-               
+              <div class="feature">
+                <i class="bi bi-lightbulb"></i>
+                <span>Focus on 5G Technology & System Management</span>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/cert2.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>ONLINE INTERNSHIP CERTIFICATE</h4>
-                <p>certificate</p>
+          <div class="skills-card">
+            <h4>Technical Expertise</h4>
+            <div class="skills-categories">
+              <div class="skill-category">
+                <h5>Networking & Communication</h5>
+                <div class="skill-tags">
+                  <span class="skill-tag">5G Technology</span>
+                  <span class="skill-tag">Cisco Networking</span>
+                  <span class="skill-tag">Network Security</span>
+                </div>
               </div>
-              <div class="portfolio-links">
-                <a href="assets/img/cert2.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="ONLINE INTERNSHIP CERTIFICATE"><i class="bx bx-plus"></i></a>
-                
+              <div class="skill-category">
+                <h5>Software & Tools</h5>
+                <div class="skill-tags">
+                  <span class="skill-tag">Tally Software</span>
+                  <span class="skill-tag">MATLAB</span>
+                  <span class="skill-tag">Java</span>
+                  <span class="skill-tag">HTML/CSS</span>
+                </div>
               </div>
-            </div>
-           
-            <div>
-              
-    </section><!-- End Portfolio Section -->
-<section id="contact" class="contact section-bg">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Contact</h2>
-           </div>
-
-        <div class="row">
-
-          <div class="col-lg-4 col-md-4">
-            <div class="contact-about">
-              <h3>NITHISH</h3>
-              <div class="social-links">
-                <a href="https://www.linkedin.com/in/nithishperumal" class="linkedin"><i class="bi bi-linkedin"></i></a>
-                <a href="https://github.com/Nithishkumar-90" class="twitter"><i class="bi bi-github"></i></a>
-                <a href="https://www.instagram.com/un_known.person29/" class="instagram"><i class="bi bi-instagram"></i></a>
-                
+              <div class="skill-category">
+                <h5>System Management</h5>
+                <div class="skill-tags">
+                  <span class="skill-tag">Technical Support</span>
+                  <span class="skill-tag">System Assembly</span>
+                  <span class="skill-tag">Troubleshooting</span>
+                </div>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-          <div class="col-lg-3 col-md-4">
-            <div class="info">
-              <div class="d-flex align-items-center">
+  <!-- ======= Portfolio Section ======= -->
+  <section id="portfolio" class="portfolio">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <span>My Work</span>
+        <h2>Certificates & Projects</h2>
+        <p>Professional certifications and technical accomplishments</p>
+      </div>
+      <div class="portfolio-grid">
+        <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="100">
+          <div class="portfolio-image">
+            <img src="assets/img/int.png" alt="CCNAv7 Certificate">
+            <div class="portfolio-overlay">
+              <div class="portfolio-content">
+                <h4>Inter Certificate</h4>
+                <p>5G communication Technology</p>
+                <a href="assets/img/int.png" class="portfolio-lightbox" title="5G communication Technology">
+                  <i class="bi bi-plus-lg"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      
+        <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="100">
+          <div class="portfolio-image">
+            <img src="assets/img/ccnav7.jpg" alt="CCNAv7 Certificate">
+            <div class="portfolio-overlay">
+              <div class="portfolio-content">
+                <h4>CCNAv7: Network Engineering</h4>
+                <p>Cisco Certified Network Associate</p>
+                <a href="assets/img/ccnav7.jpg" class="portfolio-lightbox" title="CCNAv7 Certificate">
+                  <i class="bi bi-plus-lg"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="150">
+          <div class="portfolio-image">
+            <img src="assets/img/Signal.jpg" alt="MATLAB Signal Processing">
+            <div class="portfolio-overlay">
+              <div class="portfolio-content">
+                <h4>MATLAB Signal Processing</h4>
+                <p>Signal Processing Onramp</p>
+                <a href="assets/img/Signal.jpg" class="portfolio-lightbox" title="MATLAB Signal Processing">
+                  <i class="bi bi-plus-lg"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="200">
+          <div class="portfolio-image">
+            <img src="assets/img/wireless.jpg" alt="MATLAB Wireless Communication">
+            <div class="portfolio-overlay">
+              <div class="portfolio-content">
+                <h4>MATLAB Wireless Comm</h4>
+                <p>Wireless Communication Onramp</p>
+                <a href="assets/img/wireless.jpg" class="portfolio-lightbox" title="MATLAB Wireless Communication">
+                  <i class="bi bi-plus-lg"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="250">
+          <div class="portfolio-image">
+            <img src="assets/img/Onramp.jpg" alt="MATLAB Onramp">
+            <div class="portfolio-overlay">
+              <div class="portfolio-content">
+                <h4>MATLAB Fundamentals</h4>
+                <p>MATLAB Onramp Certificate</p>
+                <a href="assets/img/Onramp.jpg" class="portfolio-lightbox" title="MATLAB Onramp">
+                  <i class="bi bi-plus-lg"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="300">
+          <div class="portfolio-image">
+            <img src="assets/img/cert1.png" alt="Java Certificate">
+            <div class="portfolio-overlay">
+              <div class="portfolio-content">
+                <h4>Java Programming</h4>
+                <p>UDEMY Certification</p>
+                <a href="assets/img/cert1.png" class="portfolio-lightbox" title="Java Certificate">
+                  <i class="bi bi-plus-lg"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-item" data-aos="zoom-in" data-aos-delay="350">
+          <div class="portfolio-image">
+            <img src="assets/img/cert2.png" alt="Internship Certificate">
+            <div class="portfolio-overlay">
+              <div class="portfolio-content">
+                <h4>Online Internship</h4>
+                <p>Internship Completion</p>
+                <a href="assets/img/cert2.png" class="portfolio-lightbox" title="Internship Certificate">
+                  <i class="bi bi-plus-lg"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="resume-download" data-aos="fade-up" data-aos-delay="400">
+        <a href="assets/img/nithishkumar_p.pdf" target="_blank" class="btn-download">
+          <i class="bi bi-download"></i>
+          Download Full Resume
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Contact Section ======= -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <span>Get In Touch</span>
+        <h2>Contact Me</h2>
+        <p>Let's discuss how we can work together on your next project</p>
+      </div>
+
+      <div class="contact-container">
+        <div class="contact-info-wrapper" data-aos="fade-right" data-aos-delay="100">
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="contact-icon">
                 <i class="bi bi-geo-alt"></i>
-                <p>Karimangalam<br>Dharmapuri |India-635111</p>
               </div>
+              <div class="contact-details">
+                <h4>Location</h4>
+                <p>Karimangalam, Dharmapuri<br>Tamilnadu, India - 635111</p>
+              </div>
+            </div>
 
-              <div class="d-flex align-items-center mt-4">
+            <div class="contact-item">
+              <div class="contact-icon">
                 <i class="bi bi-envelope"></i>
+              </div>
+              <div class="contact-details">
+                <h4>Email</h4>
                 <p>nithishperumal533@gmail.com</p>
               </div>
+            </div>
 
-              <div class="d-flex align-items-center mt-4" style="margin-bottom: 10px;">
+            <div class="contact-item">
+              <div class="contact-icon">
                 <i class="bi bi-phone"></i>
+              </div>
+              <div class="contact-details">
+                <h4>Phone</h4>
                 <p>+91 9025724946</p>
               </div>
+            </div>
 
+            <div class="social-links">
+              <a href="https://www.linkedin.com/in/nithishperumal" class="social-link linkedin" target="_blank">
+                <i class="bi bi-linkedin"></i>
+              </a>
+              <a href="https://github.com/Nithishkumar-90" class="social-link github" target="_blank">
+                <i class="bi bi-github"></i>
+              </a>
+              <a href="mailto:nithishperumal533@gmail.com" class="social-link email">
+                <i class="bi bi-envelope-fill"></i>
+              </a>
             </div>
           </div>
-
-          
-
         </div>
 
+        <div class="contact-form-wrapper" data-aos="fade-left" data-aos-delay="100">
+          <div class="contact-form">
+            <form action="https://formspree.io/f/your-form-id" method="POST" class="contact-form-element">
+              <div class="form-row">
+                <div class="form-group half">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group half">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              </div>
+              <div class="form-group">
+                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+              </div>
+              <div class="form-submit">
+                <button type="submit">Send Message</button>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
-    </section><!-- End Contact Section -->
+    </div>
+  </section>
 
-  </main><!-- End #main -->
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-content">
+        
+        <div class="credits">
+          Designed with <i class="bi bi-heart"></i> by Nithishkumar
+        </div>
+      </div>
+    </div>
+  </footer>
 
-  
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <!-- Back to Top Button -->
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 
-  <!-- Template Main JS File -->
+  <!-- Main JavaScript -->
   <script src="assets/js/main.js"></script>
-
 </body>
-	    
 </html>
